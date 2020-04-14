@@ -2,11 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import HomePage from './home-page'
+import { Login } from './login-page';
+import { Signup } from './signup-page';
 import * as serviceWorker from './serviceWorker';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <switch>
+        <Route exact path='/' component = { HomePage } />
+        <Route path= '/login' component = { Login } />
+        <Route path= '/signup' component = { Signup } />
+      </switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
